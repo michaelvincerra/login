@@ -24,9 +24,11 @@ class App extends Component {
         </Navbar.Header> 
       <Navbar.Collapse>
           <Nav pullRight>
+            // Creates menu items in Navbar
             <RouteNavItem href="/login"> Login</RouteNavItem>
             <RouteNavItem href="/eatCandy"> Eat Candy</RouteNavItem>
           </Nav>  
+          // Creates hamburger menu in case of Mobile screen
         </Navbar.Collapse>  
       </Navbar>
       <Routes />
