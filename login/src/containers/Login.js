@@ -61,4 +61,34 @@ export default class Login extends Component {
             </div>    
         );
     }
-}
+
+//     componentWillMount () {
+//         this.setState({users: [
+//           {email: 'user@21lab.com', password: '21lab_123456!'},
+//           {email: 'massimo@21lab.com', password: '2Ammazza!'},
+//           {email: 'cinzia@21lab.com', password: 'Bellezza26?'},
+//           {email: 'silvia@21lab.com', password: '9Brindisi!'}, 
+//           {email: 'sergio@21lab.com', password: 'Superer0e!'},
+//         ]})
+//       }
+    
+//       changeSearchText (e) {
+//         // setState is used to update the internal component state for App
+//         this.setState({searchText: e.target.value})
+//       }
+//       changeInStockOnlyCheck () {
+//         // setState is used to update the internal component state for App
+//         this.setState({inStockOnlyCheck: !this.state.inStockOnlyCheck})
+//       }
+//       /* return statement defines the browser presentation with HTML injected; and includes use of 'state' above */ 
+//       render () {
+//         return (
+//           <div>
+//             <SearchBar
+//               searchText={this.state.searchText}
+//               onSearchChange={this.changeSearchText}
+//               inStockOnlyCheck={this.state.inStockOnlyCheck}
+//               onInStockOnlyCheckChange={this.changeInStockOnlyCheck}
+//             />
+
+ }

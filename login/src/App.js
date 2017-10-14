@@ -28,7 +28,7 @@ class App extends Component {
             <RouteNavItem href="/login"> Login</RouteNavItem>
             <RouteNavItem href="/eatCandy"> Eat Candy</RouteNavItem>
           </Nav>  
-          // Creates hamburger menu in case of Mobile screen
+          // Creates collapsible hamburger menu for Mobile screen
         </Navbar.Collapse>  
       </Navbar>
       <Routes />
