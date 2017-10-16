@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)https://www.kirupa.com/html5/centering_vertically_horizontally.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="shortcut icon" href="https://www.kirupa.com/favicon.png">
+<link rel="apple-touch-icon" href="https://www.kirupa.com/favicon_ios.png">
+<link rel="alternate" type="application/rss+xml" title="kirupa.com Updates" href="https://www.kirupa.com/modular/kirupa.xml">
+<!--<link rel="stylesheet" media="print" href="//www.kirupa.com/ssi/newDesign/print.css" type="text/css">-->
+<meta property="og:site_name" content="kirupa.com">
+<meta property="fb:admins" content="700218">
+<meta property="og:type" content="article">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centering Vertically and Horizontally Using Flexbox | kirupa.com</title>
+<meta content="css3, flexbox, flexible box layout, vertical, horizontal, centering, alignment" name="keywords">
+<meta content="In CSS, learn how to use flexbox to easily center your content both vertically as well as horizontally." name="description">
+<meta name="author" content="Kirupa Chinnathambi">
+<meta content="Centering Vertically and Horizontally Using Flexbox | kirupa.com" name="title">
+<link href="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/kirupa_html5.css" rel="stylesheet" type="text/css">
+<!-- <link href="//www.kirupa.com/ssi/newDesign/html5reset.css" rel="stylesheet" type="text/css"> -->
+
+<meta content="Centering Vertically and Horizontally Using Flexbox" property="og:title">
+<meta content="https://www.kirupa.com/html5/centering_vertically_horizontally.htm" property="og:url">
+<meta content="https://www.kirupa.com/html5/images/center_example2.png" property="og:image">
+<meta content="In CSS, learn how to use flexbox to easily center your content both vertically as well as horizontally." property="og:description">
+
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@kirupa" name="twitter:site">
+<meta content="@kirupa" name="twitter:creator">
+<meta content="Centering Vertically and Horizontally Using Flexbox" name="twitter:title">
+<meta content="In CSS, learn how to use flexbox to easily center your content both vertically as well as horizontally." name="twitter:description">
+<meta content="https://www.kirupa.com/html5/images/center_example2.png" name="twitter:image:src">
+
+<script type="text/javascript" async="" src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/embed.js"></script></head>
+
+<body data-help="//www.kirupa.com/forum/showthread.php?369065-Tutorial-Centering-Vertically-and-Horizontally">
+
+<script async="" src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/analytics.js"></script><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-1952673-1', 'forum.kirupa.com');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+</script>
+
+<!--
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<link href='https://fonts.googleapis.com/css?family=Carrois+Gothic|Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+-->
+
+<div id="navigationSlider" class="hidden">
+	<ul id="mobileNavItems">
+		<li><a id="animationMobileLink" href="https://www.kirupa.com/learn/index.htm">Learn</a></li>
+		<!--<li><a id="javascriptMobileLink" href="//www.kirupa.com/random/index.htm">Blog</a></li>-->
+		<li><a id="bookMobileLink" href="https://www.kirupa.com/book/index.htm">Books</a></li>
+		<li><a id="forumMobileLink" href="http://forum.kirupa.com/">Forums</a></li>
+		<li></li>
+	</ul>
+</div>
+
+<div id="miniHeader" class="miniHidden miniVisible">
+  <div id="miniHeaderContent">
+		<div id="miniLogo"> <a href="https://www.kirupa.com/"><img src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/orange_logo.svg"></a>
+	  </div>
+		<div id="miniShare">
+			<div class="addthis_sharing_toolbox"></div>
+		</div>
+		<div id="miniHelp">
+			<a href="http://forum.kirupa.com/">GET HELP</a>
+		</div>
+	</div>
+</div>
+
+<div id="mobileHeader">
+	<ul>
+		<li>
+			<a href="https://www.kirupa.com/">
+				<img id="mobileLogo" alt="kirupa.com logo!" src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/orange_logo_svg.svg">
+			</a>
+		</li>
+		<li>
+			<img id="navMobile" alt="kirupa.com logo!" src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/nav_rows.svg" width="24">
+		</li>
+	</ul>
+</div>
+
+<div id="headerContainer">
+<div id="headerContent">
+	<ul>
+    <li><a href="https://www.kirupa.com/"><img src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/orange_logo_svg.svg" alt="KIRUPA logo"></a></li>
+    <li id="searchLink" class="mainItems firstItem"><a href="http://forum.kirupa.com/"><img width="16" src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/help.svg" alt=""></a></li>
+    <li id="tutorialsLink" class="mainItems textItem"><a href="https://www.kirupa.com/learn/index.htm">LEARN</a></li>
+    <li id="bookLink" class="mainItems textItem"><a href="https://www.kirupa.com/book/index.htm">BOOKS</a></li>
+    <li id="forumLink" class="mainItems textItem"><a href="http://forum.kirupa.com/">FORUM</a></li>
+    <li class="mainItems headerIcon"><a href="https://www.facebook.com/kirupa" target="_blank"><img src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/fb_svg.svg" alt=""></a></li>
+    <li class="mainItems headerIcon"><a href="https://www.twitter.com/kirupa"><img src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/twitter_svg.svg" alt=""></a></li>
+    <li id="searchArea">
+        <form action="https://www.kirupa.com/searchresults.htm" method="get" style="margin-bottom: 0px">
+            <input id="sbi" class="inputTextStyle" name="q" size="20" role="textbox" aria-autocomplete="list" aria-haspopup="true" type="text">
+            <button id="searchButton" type="submit">GO</button>
+        </form>
+    </li>
+    
+    </ul>
+</div>
+</div>
+
+
+
+<div id="mainBody">
+	
+	<div id="mainContent">
+<div id="tutorialInformation">
+	<div class="authorImage">
+		<a href="https://www.kirupa.com/me/index.htm">
+		<img alt="Look, it&#39;s a kirupa!!!" src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/kirupa_me.png"></a></div>
+	<div class="authorText">
+		<h1>Centering Content Vertically and Horizontally Using Flexbox</h1>
+		<p class="tutorialInfo">by <a href="https://www.kirupa.com/me/index.htm">kirupa</a>&nbsp;&nbsp; |&nbsp;&nbsp; 
+		19 October 2015</p>
+	</div>
+</div>
+<div id="tutorialBox">
+
+</div>
+<div class="videoframe"><div class="embed-container"><iframe src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/j9DcYeG_ENM.html" frameborder="0" allowfullscreen=""></iframe></div></div>
+		<p>Strangely enough, one of the more difficult things to do using CSS is 
+		centering content. Centering content horizontally is relatively easy
+		<strong>some of the time</strong>. 
+		Centering content vertically is difficult <strong>almost always</strong>. If you've ever 
+		tried it, it is hard - especially if you want to avoid 
+		using tables. Fortunately, our cries for help were heard, and one of the new 
+		weapons added to the CSS arsenal to solve this problem is a layout type 
+		known as the <strong>flexible box layout</strong>. All the cool kids 
+		just call it
+		<strong>flexbox</strong>.</p>
+		<p>As you'll find out in a few moments, flexbox provides you with some 
+		really nifty functionality to make complex layouts easy. A part of this 
+		nifty funtionality also allows you to center your content vertically and 
+		horizontally, and that's what we'll look at in this tutorial:</p>
+		<p class="centerImageNoBorder">
+		<img alt="example of centering" height="230" src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/center_example2.png" width="500"></p>
+		<p>We'll start with a simple example where your content isn't aligned at 
+		all. By the end of this tutorial, you will have successfully centered 
+		your content across both axes!</p>
+		<p>Let's get started!</p>
+		<div class="callout">
+			<h4>Flexbox Browser Support</h4>
+			<p>Because Flexbox is a recent introduction to the pointy tools you 
+			have to work with, check out
+			<a class="blueEmphasis" href="http://caniuse.com/flexbox" target="_blank">
+			caniuse's statistics</a> for it to see the level of support it has 
+			among the major browsers. (Thanks to
+			<a class="yellowEmphasis" href="https://twitter.com/ixisio" target="_blank">
+			Andreas Klein</a> for the reminder!)</p>
+		</div>
+		<h2>Getting Started</h2>
+		<p>Let's work with a small example to help make all of this text make 
+		more sense. Go ahead and create a new HTML document and copy and paste the 
+		following content into it:</p>
+		<div><div id="highlighter_906272" class="syntaxhighlighter nogutter kirupa_code htmlscript"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="htmlscript plain">&lt;!DOCTYPE html&gt;</code></div><div class="line number2 index1 alt1"><code class="htmlscript plain">&lt;</code><code class="htmlscript keyword">html</code><code class="htmlscript plain">&gt;</code></div><div class="line number3 index2 alt2">&nbsp;</div><div class="line number4 index3 alt1"><code class="htmlscript plain">&lt;</code><code class="htmlscript keyword">head</code><code class="htmlscript plain">&gt;</code></div><div class="line number5 index4 alt2"><code class="htmlscript plain">&lt;</code><code class="htmlscript keyword">title</code><code class="htmlscript plain">&gt;Centering Content&lt;/</code><code class="htmlscript keyword">title</code><code class="css plain">&gt;</code></div><div class="line number6 index5 alt1"><code class="css script">&lt;style&gt;</code></div><div class="line number7 index6 alt2"><code class="css plain">body {</code></div><div class="line number8 index7 alt1"><code class="htmlscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">background-color</code><code class="css plain">: </code><code class="css value">#F3F3F3</code><code class="css plain">;</code></div><div class="line number9 index8 alt2"><code class="css plain">}</code></div><div class="line number10 index9 alt1"><code class="css plain">#outer {</code></div><div class="line number11 index10 alt2"><code class="htmlscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">width</code><code class="css plain">: </code><code class="css value">200px</code><code class="css plain">;</code></div><div class="line number12 index11 alt1"><code class="htmlscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">height</code><code class="css plain">: </code><code class="css value">200px</code><code class="css plain">;</code></div><div class="line number13 index12 alt2"><code class="htmlscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">background-color</code><code class="css plain">: </code><code class="css value">#333333</code><code class="css plain">;</code></div><div class="line number14 index13 alt1"><code class="css plain">}</code></div><div class="line number15 index14 alt2"><code class="css plain">h</code><code class="css value">1</code> <code class="css plain">{</code></div><div class="line number16 index15 alt1"><code class="htmlscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">font-family</code><code class="css plain">: </code><code class="css string">"Franklin Gothic Medium"</code><code class="css plain">, </code><code class="css color1">sans-serif</code><code class="css plain">;</code></div><div class="line number17 index16 alt2"><code class="htmlscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">font-size</code><code class="css plain">: </code><code class="css value">xx-large</code><code class="css plain">;</code></div><div class="line number18 index17 alt1"><code class="htmlscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">color</code><code class="css plain">: </code><code class="css value">#3399FF</code><code class="css plain">;</code></div><div class="line number19 index18 alt2"><code class="css plain">}</code></div><div class="line number20 index19 alt1"><code class="css plain">#blueDiv {</code></div><div class="line number21 index20 alt2"><code class="htmlscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">width</code><code class="css plain">: </code><code class="css value">100px</code><code class="css plain">;</code></div><div class="line number22 index21 alt1"><code class="htmlscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">height</code><code class="css plain">: </code><code class="css value">100px</code><code class="css plain">;</code></div><div class="line number23 index22 alt2"><code class="htmlscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">background-color</code><code class="css plain">: </code><code class="css value">#3399FF</code><code class="css plain">;</code></div><div class="line number24 index23 alt1"><code class="css plain">}</code></div><div class="line number25 index24 alt2"><code class="css script">&lt;/style&gt;</code></div><div class="line number26 index25 alt1"><code class="htmlscript plain">&lt;/</code><code class="htmlscript keyword">head</code><code class="htmlscript plain">&gt;</code></div><div class="line number27 index26 alt2">&nbsp;</div><div class="line number28 index27 alt1"><code class="htmlscript plain">&lt;</code><code class="htmlscript keyword">body</code><code class="htmlscript plain">&gt;</code></div><div class="line number29 index28 alt2">&nbsp;</div><div class="line number30 index29 alt1"><code class="htmlscript plain">&lt;</code><code class="htmlscript keyword">h1</code><code class="htmlscript plain">&gt;Centering Content&lt;/</code><code class="htmlscript keyword">h1</code><code class="htmlscript plain">&gt;</code></div><div class="line number31 index30 alt2"><code class="htmlscript plain">&lt;</code><code class="htmlscript keyword">div</code> <code class="htmlscript color1">id</code><code class="htmlscript plain">=</code><code class="htmlscript string">"outer"</code><code class="htmlscript plain">&gt;</code></div><div class="line number32 index31 alt1"><code class="htmlscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="htmlscript plain">&lt;</code><code class="htmlscript keyword">div</code> <code class="htmlscript color1">id</code><code class="htmlscript plain">=</code><code class="htmlscript string">"blueDiv"</code><code class="htmlscript plain">&gt;</code></div><div class="line number33 index32 alt2"><code class="htmlscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="htmlscript plain">&lt;/</code><code class="htmlscript keyword">div</code><code class="htmlscript plain">&gt;</code></div><div class="line number34 index33 alt1"><code class="htmlscript plain">&lt;/</code><code class="htmlscript keyword">div</code><code class="htmlscript plain">&gt;</code></div><div class="line number35 index34 alt2">&nbsp;</div><div class="line number36 index35 alt1"><code class="htmlscript plain">&lt;/</code><code class="htmlscript keyword">body</code><code class="htmlscript plain">&gt;</code></div><div class="line number37 index36 alt2">&nbsp;</div><div class="line number38 index37 alt1"><code class="htmlscript plain">&lt;/</code><code class="htmlscript keyword">html</code><code class="htmlscript plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+		<p>If you preview your page, you will see something that looks as 
+		follows:</p>
+		<p class="centerImage">
+		<img alt="centering content now" height="354" src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/centering_content_now.png" width="386">&nbsp;</p>
+		<p>To dive a bit deeper into this example, the two squares you see are actually two 
+		<span class="inlineCode">div</span> elements:</p>
+		<div><div id="highlighter_187970" class="syntaxhighlighter nogutter kirupa_code html"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="html plain">&lt;</code><code class="html keyword">div</code> <code class="html color1">id</code><code class="html plain">=</code><code class="html string">"outer"</code><code class="html plain">&gt;</code></div><div class="line number2 index1 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">div</code> <code class="html color1">id</code><code class="html plain">=</code><code class="html string">"blueDiv"</code><code class="html plain">&gt;</code></div><div class="line number3 index2 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;/</code><code class="html keyword">div</code><code class="html plain">&gt;</code></div><div class="line number4 index3 alt1"><code class="html plain">&lt;/</code><code class="html keyword">div</code><code class="html plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+		<p>The outer div aptly has the id <strong>outer</strong>, and the inner 
+		div has an id of <strong>blueDiv</strong>. Our goal is to center the 
+		blueDiv inside the outer div. We'll do that next.</p>
+		<h2>Centering using Flexbox</h2>
+		<p>You specify the layout for a particular element by setting the
+		<span class="inlineCode">display</span> CSS property. To use Flexbox, 
+		set the <span class="inlineCode">display</span> value on the container 
+		to be <span class="inlineCode">flex</span>. In our example, find the CSS rule with the
+		<span class="inlineCode">#outer</span> selector, and add just the 
+		following highlighted line:</p>
+		<div><div id="highlighter_304490" class="syntaxhighlighter nogutter kirupa_code css"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">#outer {</code></div><div class="line number2 index1 alt1"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">width</code><code class="css plain">: </code><code class="css value">200px</code><code class="css plain">;</code></div><div class="line number3 index2 alt2"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">height</code><code class="css plain">: </code><code class="css value">200px</code><code class="css plain">;</code></div><div class="line number4 index3 alt1"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">background-color</code><code class="css plain">: </code><code class="css value">#333333</code><code class="css plain">;</code></div><div class="line number5 index4 alt2 highlighted"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">display</code><code class="css plain">: flex;</code></div><div class="line number6 index5 alt1"><code class="css plain">}</code></div></div></td></tr></tbody></table></div></div>
+		<p>What you've just done is set your <strong>outer</strong>
+		<span class="inlineCode">div</span> as a flex container, and this simple 
+		step forces its immediate children (aka the <strong>blueDiv</strong>) to 
+		arrange themselves using flexbox logic. If you preview your page now, 
+		what you will see is no different than what you had when you first 
+		started. We'll fix that up in a few moments!</p>
+		<p>Now that you have specified flexbox as the layout logic, the last 
+		thing that remains is to specify that the immediate children of the
+		<strong>outer</strong> <span class="inlineCode">div</span> be centered. The two 
+		flexbox properties that specify horizontal and vertical centering are
+		<span class="inlineCode">align-items</span> and <span class="inlineCode">
+		justify-content</span>.</p>
+		<h3>Centering Vertically with <span class="inlineCode">align-items</span></h3>
+		<p>The <span class="inlineCode">align-items</span> property specifies 
+		the vertical alignment of contents inside your flex container. The 
+		values you can specify are <strong>baseline</strong>, <strong>center</strong>,
+		<strong>flex-start</strong>, <strong>flex-end</strong>, and <strong>
+		stretch</strong>. The center value is what allows us to vertically 
+		center our content, so let's go ahead and specify that.</p>
+		<p>Add the following highlighted line:</p>
+		<div><div id="highlighter_770081" class="syntaxhighlighter nogutter kirupa_code css"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">#outer {</code></div><div class="line number2 index1 alt1"><code class="css spaces">&nbsp;&nbsp;</code><code class="css keyword">width</code><code class="css plain">: </code><code class="css value">200px</code><code class="css plain">;</code></div><div class="line number3 index2 alt2"><code class="css spaces">&nbsp;&nbsp;</code><code class="css keyword">height</code><code class="css plain">: </code><code class="css value">200px</code><code class="css plain">;</code></div><div class="line number4 index3 alt1"><code class="css spaces">&nbsp;&nbsp;</code><code class="css keyword">background-color</code><code class="css plain">: </code><code class="css value">#333333</code><code class="css plain">;</code></div><div class="line number5 index4 alt2"><code class="css spaces">&nbsp;&nbsp;</code><code class="css keyword">display</code><code class="css plain">: flex;</code></div><div class="line number6 index5 alt1 highlighted"><code class="css spaces">&nbsp;&nbsp;</code><code class="css plain">align-items: </code><code class="css value">center</code><code class="css plain">;</code></div><div class="line number7 index6 alt2"><code class="css plain">}</code></div></div></td></tr></tbody></table></div></div>
+		<p>Once you have added that line, you will see your <strong>blueDiv</strong> now 
+		centered on the vertical axis:</p>
+		<p class="centerImage">
+		<img alt="your content is now centered vertically" height="294" src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/centered_vertically.png" width="296"></p>
+		<p>We are almost done. All that remains is to get the square centered 
+		horizontally as well, and we'll look at that one next.</p>
+		<h3>Centering Horizontally with <span class="inlineCode">justify-content</span></h3>
+		<p>The last flexbox property we will look at is the
+		<span class="inlineCode">justify-content</span> property, and this 
+		property allows you to align your content horizontally. The values you 
+		can specify here are <strong>center</strong>, <strong>flex-start</strong>,
+		<strong>flex-end</strong>, <strong>space-between</strong>, and <strong>
+		space-around</strong>. Just like before, the value we want to specify is
+		<strong>center</strong>.</p>
+		<p>Go ahead and add the highlighted line that center aligns your content 
+		horizontally:</p>
+		<div><div id="highlighter_818782" class="syntaxhighlighter nogutter kirupa_code css"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">#outer {</code></div><div class="line number2 index1 alt1"><code class="css spaces">&nbsp;&nbsp;</code><code class="css keyword">width</code><code class="css plain">: </code><code class="css value">200px</code><code class="css plain">;</code></div><div class="line number3 index2 alt2"><code class="css spaces">&nbsp;&nbsp;</code><code class="css keyword">height</code><code class="css plain">: </code><code class="css value">200px</code><code class="css plain">;</code></div><div class="line number4 index3 alt1"><code class="css spaces">&nbsp;&nbsp;</code><code class="css keyword">background-color</code><code class="css plain">: </code><code class="css value">#333333</code><code class="css plain">;</code></div><div class="line number5 index4 alt2"><code class="css spaces">&nbsp;&nbsp;</code><code class="css keyword">display</code><code class="css plain">: flex;</code></div><div class="line number6 index5 alt1"><code class="css spaces">&nbsp;&nbsp;</code><code class="css plain">align-items: </code><code class="css value">center</code><code class="css plain">;</code></div><div class="line number7 index6 alt2 highlighted"><code class="css spaces">&nbsp;&nbsp;</code><code class="css plain">justify-</code><code class="css keyword">content</code><code class="css plain">: </code><code class="css value">center</code><code class="css plain">;</code></div><div class="line number8 index7 alt1"><code class="css plain">}</code></div></div></td></tr></tbody></table></div></div>
+		<p>Once you have done this, go ahead and preview your document in the 
+		browser one last time:</p>
+		<p class="centerImage">
+		<img alt="everything is properly centered" height="294" src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/great_success_center.png" width="296"></p>
+		<p>With that last line, your <strong>blueDiv</strong> (aka the immediate 
+		child of <strong>outer</strong>) is now centered horizontally as well. 
+		Wohooo!</p>
+		<h2>Conclusion</h2>
+		<p>Flexbox marks a major improvement over how you had to lay content out 
+		in the past. Doing something like centering something vertically and 
+		horizontally would have been a pain to do using traditional layout 
+		techniques. With Flexbox, you just added two lines to the container of 
+		the content you wished to center. That is pretty sweet! </p>
+		<p>The other good thing is that browser support is extremely good these days. You can safely use Flexbox without worrying about leaving people behind, but the support isn't universal. For those rare users,  there is a JavaScript library called
+		<a class="greenEmphasis" href="http://flexiejs.com/" target="_blank">
+		Flexie</a> that brings flexbox support to many new and old browsers. If you care about the small number of older browsers, use Flexie and sleep well at night.</p>
+		<p>
+		</p><p>If you have a question about this or any other topic, the easiest thing is to drop by <a class="blueEmphasis" href="http://forum.kirupa.com/">our forums</a> where a bunch of the friendliest people you'll ever run into will be happy to help you out!</p>
+
+
+<div id="bookPromo" style="display:none">
+<h3>Did You Like This?</h3>
+	<div id="js101Signature" style="display: none">
+		<ul>
+			<li>
+			<a onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;js101MoreInfo_Signature&#39;, &#39;clicked&#39;])" href="http://www.quepublishing.com/store/javascript-absolute-beginners-guide-9780789758064">MORE INFO</a></li>
+			<li>
+			<a onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;js101BuyNow_Signature&#39;, &#39;clicked&#39;])" href="https://www.amazon.com/exec/obidos/ASIN/0789758067/kirupacom">BUY NOW</a></li>
+		</ul>
+	</div>
+	<div id="animationSignature" style="display: none">
+		<ul>
+			<li>
+			<a onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;animationMoreInfo_Signature&#39;, &#39;clicked&#39;])" href="https://www.kirupa.com/book/animation_in_html_css_and_javascript.htm">MORE INFO</a></li>
+			<li>
+			<a onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;animationBuyNow_Signature&#39;, &#39;clicked&#39;])" href="http://www.amazon.com/dp/1502548704?_encoding=UTF8&amp;camp=15041&amp;creative=373501&amp;linkCode=as3&amp;tag=kirupacom">BUY NOW</a></li>
+		</ul>
+	</div>
+	<div id="canvasSignature" style="display: none">
+		<ul>
+			<li>
+			<a onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;canvasMoreInfo_Signature&#39;, &#39;clicked&#39;])" href="https://www.kirupa.com/book/html5_canvas_noob_to_ninja.htm">MORE INFO</a></li>
+			<li>
+			<a onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;canvasBuyNow_Signature&#39;, &#39;clicked&#39;])" href="http://www.amazon.com/gp/product/1523978090?redirect=true&amp;tag=kirupacom">BUY NOW</a></li>
+		</ul>
+	</div>
+  <div id="reactSignature">
+		<ul>
+			<li>
+			<a onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;reactMoreInfo_Signature&#39;, &#39;clicked&#39;])" href="http://www.informit.com/store/learning-react-a-hands-on-guide-to-building-maintainable-9780134546315">MORE INFO</a></li>
+			<li>
+			<a onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;reactBuyNow_Signature&#39;, &#39;clicked&#39;])" href="https://www.amazon.com/exec/obidos/ASIN/0134546318/kirupacom">BUY NOW</a></li>
+		</ul>
+  </div>
+</div>
+
+
+<p><a href="https://www.kirupa.com/about/whatiskirupa.htm"><img src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/kirupa_sig.png" width="150" height="65" alt=""></a> </p>
+	
+	<div id="sigNewsletter">
+		<h4>THE KIRUPA NEWSLETTER</h4>
+
+		<p>Get cool tips, tricks, <span class="strikethrough">selfies</span>, and more...personally hand-delivered to your inbox!</p>
+
+		<form action="https://kirupa.us7.list-manage.com/subscribe/post?u=b0d69bc8873ebf34032eb7796&amp;id=47036a7bd4" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+			<div id="mc_embed_signup_scroll">
+				<p><input class="email" id="mce-EMAIL" name="EMAIL" placeholder="email address" required="" type="email" value=""><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="SIGN ME UP"> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--></p>
+
+				<p>
+				</p>
+
+				<div style="position: absolute; left: -5000px;">
+					<input name="b_b0d69bc8873ebf34032eb7796_47036a7bd4" tabindex="-1" type="text" value="">
+				</div>
+
+
+				<div class="clear">
+				</div>
+			</div>
+		</form>
+		<p class="smallText">( <a class="blueEmphasis" href="http://us7.campaign-archive1.com/home/?u=b0d69bc8873ebf34032eb7796&amp;id=47036a7bd4">View past issues</a> for an idea of what you've been missing out on all this time! )</p>
+	</div>
+
+<p> </p>
+		<h2 id="pageComments">WHAT DO YOU THINK?</h2>
+		<div id="pageCommentsImage">
+			<img src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/green_square.svg">
+		</div>
+		<div id="oldComments">	
+			<div id="discourse-comments"><iframe src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/comments.html" id="discourse-embed-frame" width="100%" frameborder="0" scrolling="no" height="30px"></iframe></div>
+
+			<script type="text/javascript">
+			  DiscourseEmbed = { discourseUrl: 'https://forum.kirupa.com/',
+								 discourseEmbedUrl: "http://www.kirupa.com" + window.location.pathname.split("?")[0].split("#")[0] };
+
+			  (function() {
+				var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+				d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+			  })();
+			</script>
+		</div>
+        
+        <!-- Go to www.addthis.com/dashboard to customize your tools 
+        <h2>You May Also Like</h2>
+<div class="addthis_recommended_horizontal"></div>--><p></p>
+	</div>
+	<div id="rightContents">
+	<div id="bookBannerContent">
+		<ul>
+			<li class="animationRight">
+				<a onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;button&#39;, &#39;click&#39;, &#39;animBook&#39;)" href="http://shop.oreilly.com/product/0636920050858.do" target="_blank"><strong>Creating</strong><span class="lessemphasis"> Web Animations</span></a>
+				<ul class="buyNowRight">
+					<li>
+				  <a onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;button&#39;, &#39;click&#39;, &#39;animBook_button&#39;)" href="https://www.amazon.com/exec/obidos/ASIN/1491957514/kirupacom" target="_blank">BUY</a></li>
+			  </ul>
+		  </li>
+        	<li class="learningReactRight">
+			  <a onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;button&#39;, &#39;click&#39;, &#39;learningReactBook&#39;)" href="https://www.amazon.com/exec/obidos/ASIN/0134546318/kirupacom"><strong>Learning React:</strong><br>
+              <span class="lessemphasis">A Hands-on Guide</span></a>
+				<ul class="buyNowRight">
+					<li>
+					<a onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;button&#39;, &#39;click&#39;, &#39;learningReactBook_button&#39;)" href="https://www.amazon.com/exec/obidos/ASIN/0134546318/kirupacom">BUY</a></li>
+			  </ul>
+		  </li>
+        	<li class="js101Right">
+				<a onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;button&#39;, &#39;click&#39;, &#39;js101Book&#39;)" href="http://www.quepublishing.com/store/javascript-absolute-beginners-guide-9780789758064"><strong>JavaScript</strong> <span class="lessemphasis">Absolute Beginner's Guide</span></a>
+				<ul class="buyNowRight">
+					<li>
+				  <a onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;button&#39;, &#39;click&#39;, &#39;js101Book_button&#39;)" href="https://www.amazon.com/exec/obidos/ASIN/0789758067/kirupacom">BUY</a></li>
+			  </ul>
+		  </li>
+
+			<!--
+ 			<li class="canvasRight">
+				<strong><a onclick="ga('send', 'event', 'button', 'click', 'canvasBook')" href="https://www.kirupa.com/book/html5_canvas_noob_to_ninja.htm">HTML5 Canvas:</a></strong><a onclick="ga('send', 'event', 'button', 'click', 'canvasBook')" href="https://www.kirupa.com/book/html5_canvas_noob_to_ninja.htm"><br>
+                <span class="lessemphasis">From Noob to Ninja</span></a>
+				<ul class="buyNowRight">
+					<li>
+					<a onclick="ga('send', 'event', 'button', 'click', 'canvasBook_button')" href="http://www.amazon.com/gp/product/1523978090?redirect=true&tag=kirupacom" target="_blank">BUY</a></li>
+			  </ul>
+		  </li>
+-->
+		</ul>
+		<img alt="new books - yay!!!" height="66" src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/caption_books.png" width="165">
+	</div>
+    <!--
+    <div id="followRight"> <a href="http://www.twitter.com/kirupa" target="_blank"><img id="twitter" src="//www.kirupa.com/ssi/newDesign/twitter.svg"/></a>
+        <a href="http://www.facebook.com/kirupa" target="_blank"><img id="facebook" src="//www.kirupa.com/ssi/newDesign/facebook.svg"/></a>
+        <a href="http://www.youtube.com/kirupa" target="_blank"><img id="youtube" src="//www.kirupa.com/ssi/newDesign/youtube.svg"/></a>
+        <a href="http://www.pinterest.com/kirupa" target="_blank"><img id="pinterest" src="//www.kirupa.com/ssi/newDesign/pinterest.svg" alt=""/></a>
+        <img src="//www.kirupa.com/ssi/newDesign/linkedin.svg"/>
+    </div>
+    -->
+    <div id="rightNewsletter">
+    	<h4>NEWSLETTER</h4>
+    	<p>No spam. No fluff. Just awesome content sent straight to your inbox!</p>
+    	<form action="https://kirupa.us7.list-manage.com/subscribe/post?u=b0d69bc8873ebf34032eb7796&amp;id=47036a7bd4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    <div id="mc_embed_signup_scroll">
+	<p>
+	  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="">
+	  </p>
+	<p>
+	  <input type="submit" value="SIGN ME UP" name="subscribe" id="mc-embedded-subscribe" class="button greenButton">
+	  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+	  </p>
+	<div style="position: absolute; left: -5000px;"><input type="text" name="b_b0d69bc8873ebf34032eb7796_47036a7bd4" tabindex="-1" value=""></div>
+    <div class="clear"></div>
+    </div>
+</form>
+    </div>
+</div>
+
+</div>
+<div id="mainFooter">
+    
+    <div id="footer">
+        <div id="welcome" class="footerStuff">
+    		<h4>HELLO and welcome</h4>
+            <p>This site was started in 1998 with the goal of teaching designers and developers how to create cool things for the web. That we'd still be around today was never part of the plan. We figured the whole internet thing would have died down around 2004. I guess we were off in our calculations.</p>
+        </div>
+        
+        <div id="stuff" class="footerStuff">
+        	<h4>STUFF</h4>
+            <ul>
+            	<li><a href="https://www.kirupa.com/about/the_peeps.htm">About + Team</a></li>
+            	<li><a href="https://www.kirupa.com/me/credits.htm">Credits</a></li>
+                <li><a href="https://www.kirupa.com/me/howtohelp.htm">How to Help</a></li>
+                <li><a href="https://www.kirupa.com/contact.htm">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div id="followUs" class="footerStuff">
+        	<h4>FOLLOW us</h4>
+            <ul>
+            	<li><a href="http://www.twitter.com/kirupa" target="_blank" style="background-image:url(&quot;//www.kirupa.com/ssi/newDesign/twitter.svg&quot;);">Twitter</a></li>
+            	<li><a href="https://www.facebook.com/kirupa/" target="_blank" style="background-image:url(&quot;//www.kirupa.com/ssi/newDesign/facebook.svg&quot;);">Facebook</a></li>
+                <li><a href="https://www.youtube.com/user/kirupa" target="_blank" style="background-image:url(&quot;//www.kirupa.com/ssi/newDesign/youtube.svg&quot;);">YouTube</a></li>
+                <li><a href="https://www.pinterest.com/kirupa/" target="_blank" style="background-image:url(&quot;//www.kirupa.com/ssi/newDesign/pinterest.svg&quot;);">Pinterest</a></li>
+                <li><a href="https://www.linkedin.com/in/kirupa" target="_blank" style="background-image:url(&quot;//www.kirupa.com/ssi/newDesign/linkedin.svg&quot;);">LinkedIn</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="footerBottom"> <a href="https://mediatemple.net/" target="_blank"><img src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/mt_hosting.png" alt="Awesome and high-performance web hosting!"></a>
+    </div>
+</div>
+<div id="bottomFooterLinks">
+	<p>© 2016 Kirupa, Inc.</p>
+</div>
+
+<div id="mobileFooter">
+	<div id="topFooter"><a href="https://www.kirupa.com/html5/centering_vertically_horizontally.htm#">BACK TO TOP</a></div>
+	
+		<div id="bookBannerContent">
+		<ul>
+         	<li class="canvasRight">
+				<a onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;canvasMoreInfo&#39;, &#39;clicked&#39;])" href="https://www.kirupa.com/book/html5_canvas_noob_to_ninja.htm">HTML5 Canvas: From Noob to Ninja</a>
+				<ul class="buyNowRight">
+					<li>
+					<a onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;canvasBuyNow&#39;, &#39;clicked&#39;])" href="http://www.amazon.com/gp/product/1523978090?redirect=true&amp;tag=kirupacom">BUY NOW</a></li>
+				</ul>
+			</li>
+			<li class="animationRight">
+				<a onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;animationMoreInfo&#39;, &#39;clicked&#39;])" href="https://www.kirupa.com/book/animation_in_html_css_and_javascript.htm">Animation in HTML, CSS, and JavaScript</a>
+				<ul class="buyNowRight">
+					<li>
+					<a onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;animationBuyNow&#39;, &#39;clicked&#39;])" href="http://www.amazon.com/dp/1502548704?_encoding=UTF8&amp;camp=15041&amp;creative=373501&amp;linkCode=as3&amp;tag=kirupacom" target="_blank">BUY NOW</a></li>
+				</ul>
+			</li>
+			<li class="js101Right">
+				<a onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;js101MoreInfo&#39;, &#39;clicked&#39;])" href="http://www.quepublishing.com/store/javascript-absolute-beginners-guide-9780789758064">JavaScript: Absolute Beginner's Guide</a>
+				<ul class="buyNowRight">
+					<li>
+					<a onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;js101BuyNow&#39;, &#39;clicked&#39;])" href="https://www.amazon.com/exec/obidos/ASIN/0789758067/kirupacom">BUY NOW</a></li>
+				</ul>
+			</li>
+		</ul>
+		<img alt="new books - yay!!!" height="66" src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/caption_books.png" width="165">
+	</div>
+	
+	<div id="bottomLinks">
+		<h3>Copyright 2017 Kirupa, Inc.</h3>
+	</div>
+</div>
+
+<script async="" src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/kirupa.js"></script> 
+
+
+<link href="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/shCore.css" rel="stylesheet" type="text/css">
+<link href="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/shThemeDefault.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/shCore.js"></script>
+<script type="text/javascript" src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/shBrushJScript.js"></script>
+<script type="text/javascript" src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/shBrushXml.js"></script>
+<script type="text/javascript" src="./Centering Vertically and Horizontally Using Flexbox _ kirupa.com_files/shBrushCss.js"></script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools 
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=kirupa" async="async"></script>
+-->
+
+<script type="text/javascript">
+	 SyntaxHighlighter.defaults['gutter'] = false;
+	 SyntaxHighlighter.defaults['toolbar'] = false;
+	 SyntaxHighlighter.defaults['class-name'] = 'kirupa_code';
+     SyntaxHighlighter.all();
+</script>
+
+
+
+
+
+</body></html>

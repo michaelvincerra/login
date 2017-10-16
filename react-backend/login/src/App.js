@@ -21,9 +21,10 @@ class App extends Component {
     //Creates collapsible hamburger menu for Mobile screen
     // Creates menu items in Navbar
 
-
+    
   render() {
     return (
+      
     <div className="App container">
       <Navbar fluid collapseOnSelect>
         <Navbar.Header>
@@ -41,11 +42,11 @@ class App extends Component {
       </Navbar>
       <Routes />
 
-      <h1>Users</h1>
+      {/* <h1>Users</h1>
       {this.state.users.map(user => 
         <div key={user.email}>
           {user.email} <br/>
-        </div>)}
+        </div>)} */}
     </div>
     );
   }

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- saved from url=(0125)https://forum.kirupa.com/embed/comments?embed_url=http%3A%2F%2Fwww.kirupa.com%2Fhtml5%2Fcentering_vertically_horizontally.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    <link href="./embed_87118e43be600d45e81f2f69d2670acd3ccbabad.css" media="all" rel="stylesheet" data-target="embed">
+      <link href="./embedded_theme_5_fe6cf3cf9150b1576df78cd407d626868ea3d25f.css" media="all" rel="stylesheet" data-target="embedded_theme">
+    <link rel="preload" href="./break_string-cc617154cd957804f2f6a1f3bc68258c9cdca3d4b9a322bf777d145fed04790e.js" as="script">
+<script src="./break_string-cc617154cd957804f2f6a1f3bc68258c9cdca3d4b9a322bf777d145fed04790e.js"></script>
+
+      <title>Centering Vertically and Horizontally Using Flexbox | kirupa.com - programming - kirupaForum</title>
+
+    <script>
+      (function() {
+
+        function postUp(msg) {
+          if (parent) {
+            parent.postMessage(msg, 'https://www.kirupa.com/html5/centering_vertically_horizontally.htm');
+          }
+        }
+
+        function clickPostLink(e) {
+          var postId = e.target.getAttribute('data-link-to-post');
+          if (postId) {
+            var postElement = document.getElementById('post-' + postId);
+            if (postElement) {
+              var rect = postElement.getBoundingClientRect();
+              if (rect && rect.top) {
+                postUp({type: 'discourse-scroll', top: rect.top});
+                e.preventDefault();
+                return false;
+              }
+            }
+          }
+        }
+
+        window.onload = function() {
+          // Send a post message with our loaded height
+          postUp({type: 'discourse-resize', height: document['body'].offsetHeight});
+
+          var postLinks = document.querySelectorAll("a[data-link-to-post]"),
+              i;
+
+          for (i=0; i<postLinks.length; i++) {
+            postLinks[i].onclick = clickPostLink;
+          }
+
+          // Make sure all links in the iframe point to _blank
+          var cookedLinks = document.querySelectorAll('.cooked a');
+          for (i=0; i<cookedLinks.length; i++) {
+            cookedLinks[i].target = "_blank";
+          }
+
+          // Adjust all names
+          var names = document.querySelectorAll('.username a');
+          for (i=0; i<names.length; i++) {
+            var username = names[i].innerHTML;
+            if (username) {
+              names[i].innerHTML = new BreakString(username).break();
+            }
+          }
+
+        };
+
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="discourse">
+    <a class="button" target="_blank" href="http://forum.kirupa.com/t/centering-vertically-and-horizontally-using-flexbox-kirupa-com/352328">Start Discussion</a>
+  <span class="replies">0 replies</span>
+</header>
+
+
+  
+
+</body></html>
