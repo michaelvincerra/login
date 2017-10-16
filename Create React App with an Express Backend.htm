@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://daveceddia.com/create-react-app-express-backend/ -->
+<html class="no-js" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Create React App with an Express Backend</title>
+<meta name="description" content="Learn how to forward API requests from Create React App to any backend with the proxy setting.">
+<meta name="keywords" content="react, backend, express">
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Create React App with an Express Backend">
+<meta name="twitter:description" content="Learn how to forward API requests from Create React App to any backend with the proxy setting.">
+<meta name="twitter:site" content="@dceddia">
+<meta name="twitter:creator" content="@dceddia">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://daveceddia.com/images/react-and-express-twitter.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Create React App with an Express Backend">
+<meta property="og:description" content="Learn how to forward API requests from Create React App to any backend with the proxy setting.">
+
+<meta property="og:image" content="https://daveceddia.com/images/react-and-express-square.png">
+
+<meta property="og:url" content="https://daveceddia.com/create-react-app-express-backend/">
+<meta property="og:site_name" content="Dave Ceddia">
+
+
+
+
+
+<link href="./Create React App with an Express Backend_files/css" rel="stylesheet">
+<link rel="canonical" href="https://daveceddia.com/create-react-app-express-backend/">
+<link href="https://daveceddia.com/feed.xml" type="application/atom+xml" rel="alternate" title="Dave Ceddia Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="fb:admins" content="50205984">
+
+
+<!-- For all browsers -->
+<link rel="stylesheet" type="text/css" href="./Create React App with an Express Backend_files/site.min.css">
+
+<!-- Webfonts -->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="https://daveceddia.com/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="https://daveceddia.com/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="https://daveceddia.com/favicon.ico?v=2">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="https://daveceddia.com/favicon.png?v=2">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="https://daveceddia.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://daveceddia.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://daveceddia.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://daveceddia.com/images/apple-touch-icon-144x144-precomposed.png">
+
+<script type="text/javascript" async="" src="./Create React App with an Express Backend_files/linkid.js"></script><script async="" src="./Create React App with an Express Backend_files/analytics.js"></script><script type="text/javascript" async="" src="./Create React App with an Express Backend_files/embed.js"></script><script async="" type="text/javascript" src="./Create React App with an Express Backend_files/count.js"></script><script src="./Create React App with an Express Backend_files/CKJS4.js" id="_ck_js_tag"></script><script type="text/javascript" async="" src="./Create React App with an Express Backend_files/js"></script><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.6320e20b57d877f77ba9dc866ff7fb10.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.94d68a3431b70c72522e54f84b601a07.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.f70d641213ff2b7d8720b76747efe591.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><script src="./Create React App with an Express Backend_files/count-data.js"></script><script type="text/javascript" src="./Create React App with an Express Backend_files/jquery.min.js"></script><script type="text/javascript" async="" src="./Create React App with an Express Backend_files/in.php"></script><script src="./Create React App with an Express Backend_files/alfie.f51946af45e0b561c60f768335c9eb79.js" async="" charset="UTF-8"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="9e8a4d2a-6f8c-415e-851b-bdfe4c01d5c1/service" src="./Create React App with an Express Backend_files/service.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="8dc42610-ae42-4164-90b1-573478b46574/service" src="./Create React App with an Express Backend_files/service(1).js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="13359558-e447-43f3-a3cd-aa61c0b91c02/service" src="./Create React App with an Express Backend_files/service(2).js"></script><link type="text/css" rel="stylesheet" href="./Create React App with an Express Backend_files/sme-popup.css"><style>@-webkit-keyframes insQ_100 {  from {  outline: 1px solid transparent  } to {  outline: 0px solid transparent }  }
+#menufication-top { animation-duration: 0.001s; animation-name: insQ_100; -webkit-animation-duration: 0.001s; -webkit-animation-name: insQ_100;  } </style><link type="text/css" rel="stylesheet" href="./Create React App with an Express Backend_files/sumome-scrollbox-popup.css"><link type="text/css" rel="stylesheet" href="./Create React App with an Express Backend_files/sumome-share-client.css"><script type="text/javascript" async="" src="./Create React App with an Express Backend_files/in(1).php"></script><script type="text/javascript" async="" src="./Create React App with an Express Backend_files/in(2).php"></script><script type="text/javascript" async="" src="./Create React App with an Express Backend_files/in(3).php"></script><script type="text/javascript" async="" src="./Create React App with an Express Backend_files/in(4).php"></script><script type="text/javascript" async="" src="./Create React App with an Express Backend_files/in(5).php"></script><script type="text/javascript" async="" src="./Create React App with an Express Backend_files/in(6).php"></script><script type="text/javascript" async="" src="./Create React App with an Express Backend_files/in(7).php"></script></head>
+
+<body id="post" style="margin-bottom: 0px; padding-bottom: 0px;">
+
+<nav role="navigation" id="site-nav">
+	<header>
+    
+		<a href="https://daveceddia.com/" class="site-logo" rel="home" title="Dave Ceddia">
+			<img src="./Create React App with an Express Backend_files/logo.png" width="62" height="55" alt="Dave Ceddia logo">
+		</a>
+    
+    <h1 class="site-title"><a href="https://daveceddia.com/">Dave Ceddia</a></h1>
+		<h2 class="site-description" itemprop="description">Articles to help you learn and master frontend development with React.</h2>
+	</header>
+  <ul>
+  
+    
+        
+    
+    <li>
+    	<a href="https://daveceddia.com/archives/">All Posts</a>
+    </li>
+  
+    
+        
+    
+    <li>
+    	<a href="https://daveceddia.com/about/">About</a>
+    </li>
+  
+    
+        
+    
+    <li>
+    	<a class="nav-cta" href="https://daveceddia.com/pure-react/">Book</a>
+    </li>
+  
+  </ul>
+</nav>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="https://daveceddia.com/tags/#react" title="Pages tagged react">react</a>&nbsp;•&nbsp;<a href="https://daveceddia.com/tags/#backend" title="Pages tagged backend">backend</a>&nbsp;•&nbsp;<a href="https://daveceddia.com/tags/#express" title="Pages tagged express">express</a></span>
+        
+          <h1 class="entry-title">Create React App with an Express Backend</h1>
+        
+      </header>
+      <footer class="entry-meta muted-centered">
+        
+        
+        <span class="author vcard">By <span class="fn">Dave Ceddia</span></span>
+        <span class="entry-date date published"><time datetime="2017-04-19T19:31:27-04:00"><i class="fa fa-calendar-o"></i> April 19, 2017</time></span>
+        
+        <span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="https://daveceddia.com/create-react-app-express-backend/#disqus_thread">61 Comments</a></span>
+        
+        
+      </footer>
+      <a id="twitter-follow" href="https://twitter.com/intent/follow?screen_name=dceddia" class="twitter-follow-button" target="_blank">
+	<i></i> Follow @dceddia</a>
+
+
+      <div class="entry-content">
+        
+        <p>If you haven’t heard of it yet, <a href="https://github.com/facebookincubator/create-react-app">Create React App</a> is an awesome way to get started with React. It creates a project structure for you, all set up and ready to go. You get to skip the configuration of Webpack and Babel, and get right down to writing your app.</p>
+
+<p>But what if your app isn’t <em>purely</em> frontend? What if you need to connect to a backend server? Create React App has you covered.</p>
+
+<p>In this post we’ll set up a React app alongside an Express backend app, and wire up the UI to fetch some data from the backend.</p>
+
+<p>And, if your backend is <em>not</em> written with Express, don’t worry! This same process will work for you too (skip to the <a href="https://daveceddia.com/create-react-app-express-backend/#configure-the-proxy">Configure the Proxy</a> section).</p>
+
+<p>Let’s get into it.</p>
+
+<h2 id="create-the-express-app">Create the Express App</h2>
+
+<p>We’ll need an Express app first off. If you have one already, you can skip this step.</p>
+
+<p>For the purpose of this post, we’ll generate one with the <a href="https://expressjs.com/en/starter/generator.html">express-generator</a> utility. Install the generator:</p>
+
+<pre class=" language-bash"><code class=" language-bash">$ npm install -g express-generator
+# or:  yarn global add express-generator
+</code></pre>
+
+<p><img src="./Create React App with an Express Backend_files/install-express-generator.png" alt="Output from installing express-generator"></p>
+
+<p>Then run it to create the Express app:</p>
+
+<pre class=" language-bash"><code class=" language-bash">$ express react-backend
+</code></pre>
+
+<p><img src="./Create React App with an Express Backend_files/generate-express-app.png" alt="Output from generating react-backend"></p>
+
+<p>It’ll create a <code>react-backend</code> folder. Then make sure to install the dependencies:</p>
+
+<pre class=" language-bash"><code class=" language-bash">$ cd react-backend
+$ npm install   # or yarn
+</code></pre>
+
+<p>We can ignore most of the generated files but we’ll edit the <code>react-backend/routes/users.js</code> file as a simple way to return some data. Here’s the change we’ll make:</p>
+
+<pre class=" language-js"><code class=" language-js"><span class="token keyword">var</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> router <span class="token operator">=</span> express<span class="token punctuation">.</span><span class="token function">Router</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/* GET users listing. */</span>
+router<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment" spellcheck="true">// Comment out this line:</span>
+  <span class="token comment" spellcheck="true">//res.send('respond with a resource');</span>
+
+  <span class="token comment" spellcheck="true">// And insert something like this instead:</span>
+  res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
+  	id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  	username<span class="token punctuation">:</span> <span class="token string">"samsepi0l"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  	id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  	username<span class="token punctuation">:</span> <span class="token string">"D0loresH4ze"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> router<span class="token punctuation">;</span>
+</code></pre>
+
+<p>That’s all we’ll do to Express. Start up the app by running this:</p>
+
+<pre class=" language-bash"><code class=" language-bash">$ PORT=3001 node bin/www
+</code></pre>
+
+<p>Leave it running, and open up a new terminal. Note the <code>PORT</code> variable: this Express app will default to port 3000, and Create React App will also default to port 3000. To avoid the conflict, start Express on 3001.</p>
+
+<h2 id="create-the-react-app">Create the React App</h2>
+
+<p>You can put the React app anywhere you like. It doesn’t need to be a subfolder of the Express app, but that’s what we’ll do here to keep things organized.</p>
+
+<p>First things first, make sure you have <code>create-react-app</code> installed if you don’t already:</p>
+
+<pre class=" language-bash"><code class=" language-bash">npm install -g create-react-app
+</code></pre>
+
+<p>Then, from inside the <code>react-backend</code> folder, create the React app:</p>
+
+<pre class=" language-bash"><code class=" language-bash">create-react-app client
+</code></pre>
+
+<h2 id="configure-the-proxy">Configure the Proxy</h2>
+
+<p>This is the key change that will let the React app talk to the Express backend (or any backend).</p>
+
+<p>Inside the React app’s folder (<code>client</code>), open up <code>package.json</code> (make sure it’s not Express’ package.json – it should have things like “react” and “react-scripts” in it). Under the “scripts” section, add the “proxy” line like this:</p>
+
+<pre class=" language-json"><code class=" language-json">  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:3001"
+</code></pre>
+
+<p>The port (3001) in the “proxy” line <em>must match</em> the port that your Express server is running on.</p>
+
+<p>Note that this can point to <em>any</em> server. It can be another local backend in Java or Python, or it could be a real server on the internet. Doesn’t matter.</p>
+
+<p>The way this works is, any time your React app makes a request to something that’s not a static asset (not an image or CSS or <code>index.html</code>, basically), it will forward the request to the server specified in <code>"proxy"</code>.</p>
+
+<p><img src="./Create React App with an Express Backend_files/how-proxy-works.png" alt="How the Proxy Works"></p>
+
+<p>Once this is done, start the React development server by running <code>npm start</code> (or <code>yarn start</code>).</p>
+
+<h2 id="fetch-the-data-from-react">Fetch the Data from React</h2>
+
+<p>At this point 2 servers are running: Express (on port 3001) and Create React App’s Webpack dev server (on port 3000).</p>
+
+<p>Let’s make a call to the <code>/users</code> endpoint and make sure the whole pipeline is working.</p>
+
+<p>Open up <code>client/src/App.js</code> and tweak it to look like this:</p>
+
+<pre class=" language-jsx"><code class=" language-jsx"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'./App.css'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  state <span class="token operator">=</span> <span class="token punctuation">{</span>users<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+
+  <span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'/users'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">&gt;</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>users <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> users <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>App<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Users<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+        <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>users<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>user <span class="token operator">=</span><span class="token operator">&gt;</span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span>user<span class="token punctuation">.</span>id<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span>user<span class="token punctuation">.</span>username<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token punctuation">)</span><span class="token punctuation">}</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span>
+</code></pre>
+
+<p>The changes here are:</p>
+
+<ul>
+  <li>
+    <p>Setting an initial state at the top: an empty users array will prevent the <code>this.state.users.map</code> from blowing up before the users are loaded.</p>
+  </li>
+  <li>
+    <p>Changed <code>render</code> to render the list of users.</p>
+  </li>
+  <li>
+    <p>Added <code>componentDidMount</code> to get the data using <code>fetch</code>, and save them in state.</p>
+  </li>
+</ul>
+
+<p>Create React App comes with the <code>fetch</code> polyfill <a href="https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-language-features-and-polyfills">built in</a> so you’re all set even if your browser doesn’t natively support it yet. [thanks to Mohamed Elbou for pointing this out in the comments]</p>
+
+<p>There’s also further reading if you’re wondering <a href="https://daveceddia.com/ajax-requests-in-react/">how to do AJAX in React</a> or why the fetch is in <a href="https://daveceddia.com/where-fetch-data-componentwillmount-vs-componentdidmount/">componentDidMount instead of componentWillMount</a>.</p>
+
+<h2 id="wrap-up">Wrap Up</h2>
+
+<p>Now you’re a pro at hooking up a CRA-generated app to any backend you can throw at it! Got more questions? Want to see something else? Leave a comment below.</p>
+
+<h2 id="want-to-deploy-to-production">Want to Deploy to Production?</h2>
+
+<p>Check out Part 2, <a href="https://daveceddia.com/create-react-app-express-production">Create React App with Express in Production</a> where we build an Express+React app and deploy it to Heroku.</p>
+
+<h2 id="translations">Translations</h2>
+
+<p>Read this in <a href="https://reactx.de/artikel/erstellen-einer-reactjs-app-mit-express-backend/">Deutsche (German)</a>.</p>
+
+        
+          <div class="end-post-book">
+  <p>For a step-by-step approach to learning React,<br> check out my <a href="https://daveceddia.com/pure-react/?utm_campaign=after-post">book</a> — grab 2 free sample chapters.</p>
+  <div style="text-align: left;font-size:14px;font-family: &#39;Open Sans&#39;,sans-serif;background-color: #fff;padding: 10px;border-radius: 2px;box-sizing: border-box;width: 40%;margin: 0 auto;background: #ecf5f9;">
+    <div>
+      As far as I am concerned, even the intro which is free is worth the price.
+    </div>
+    <div class="person">
+      <div class="person--name" style="font-weight:600;">— Isaac</div>
+    </div>
+  </div>
+</div>
+
+        
+        
+	  <div><div class="ck_form_container ck_inline" data-ck-version="5">
+  
+<div class="ck_form ck_vertical_subscription_form ck_horizontal">
+  <div class="ck_form_content">
+    <h3 class="ck_form_title">Download a Timeline for Learning React</h3>
+    <div class="ck_description">
+      <span class="ck_image">
+        
+      </span>
+      <p><img src="./Create React App with an Express Backend_files/content_Screen_Shot_2017-05-01_at_11.31.01_AM.png"></p><p>Sign up and get my React Learning Timeline PDF and weekly articles about React and JavaScript.</p>
+    </div>
+  </div>
+
+  <div class="ck_form_fields">
+    <div id="ck_success_msg" style="display:none;">
+      <p>Success! Now check your email for the timeline PDF.</p>
+    </div>
+
+    <!--  Form starts here  -->
+    <form id="ck_subscribe_form" class="ck_subscribe_form" action="https://forms.convertkit.com/landing_pages/216447/subscribe" data-remote="true">
+      <input type="hidden" value="{&quot;form_style&quot;:&quot;full&quot;,&quot;embed_style&quot;:&quot;inline&quot;,&quot;embed_trigger&quot;:&quot;scroll_percentage&quot;,&quot;scroll_percentage&quot;:&quot;70&quot;,&quot;delay_seconds&quot;:&quot;10&quot;,&quot;display_position&quot;:&quot;br&quot;,&quot;display_devices&quot;:&quot;all&quot;,&quot;days_no_show&quot;:&quot;15&quot;,&quot;converted_behavior&quot;:&quot;show&quot;}" id="ck_form_options">
+      <input type="hidden" name="id" value="216447" id="landing_page_id">
+      <input type="hidden" name="ck_form_recaptcha" value="" id="ck_form_recaptcha">
+      <div class="ck_errorArea">
+        <div id="ck_error_msg" style="display:none">
+          <p>There was an error submitting your subscription. Please try again.</p>
+        </div>
+      </div>
+      <div class="ck_control_group ck_first_name_field_group">
+        <label class="ck_label" for="ck_firstNameField">First Name</label>
+        <input type="text" name="first_name" class="ck_first_name" id="ck_firstNameField">
+      </div>
+      <div class="ck_control_group ck_email_field_group">
+        <label class="ck_label" for="ck_emailField">Email Address</label>
+        <input type="email" name="email" class="ck_email_address" id="ck_emailField" required="">
+      </div>
+      <div class="ck_control_group ck_captcha2_h_field_group ck-captcha2-h" style="position: absolute !important;left: -999em !important;">
+        <label class="ck_label" for="ck_captcha2_h">We use this field to detect spam bots. If you fill this in, you will be marked as a spammer.</label>
+        <input type="text" name="captcha2_h" class="ck-captcha2-h" id="ck_captcha2_h">
+      </div>
+
+        <label class="ck_checkbox" style="display:none;">
+          <input class="optIn ck_course_opted" name="course_opted" type="checkbox" id="optIn" checked="">
+          <span class="ck_opt_in_prompt">I'd like to receive the free email course.</span>
+        </label>
+
+      <button class="subscribe_button ck_subscribe_button btn fields" id="ck_subscribe_button">
+        Subscribe
+      </button>
+      <span class="ck_guarantee">
+        Weekly-ish articles about React and JS.
+          <a class="ck_powered_by" href="https://convertkit.com/?utm_campaign=poweredby">Powered by ConvertKit</a>
+      </span>
+    </form>
+  </div>
+
+</div>
+
+</div>
+
+
+<style type="text/css">/* Layout */
+  .ck_form {
+  /* divider image */
+	background: #fff url(data:image/gif;base64,R0lGODlhAQADAIABAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS41LWMwMTQgNzkuMTUxNDgxLCAyMDEzLzAzLzEzLTEyOjA5OjE1ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MUQ5NjM5RjgxQUVEMTFFNEJBQTdGNTQwMjc5MTZDOTciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MUQ5NjM5RjkxQUVEMTFFNEJBQTdGNTQwMjc5MTZDOTciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxRDk2MzlGNjFBRUQxMUU0QkFBN0Y1NDAyNzkxNkM5NyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxRDk2MzlGNzFBRUQxMUU0QkFBN0Y1NDAyNzkxNkM5NyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgH//v38+/r5+Pf29fTz8vHw7+7t7Ovq6ejn5uXk4+Lh4N/e3dzb2tnY19bV1NPS0dDPzs3My8rJyMfGxcTDwsHAv769vLu6ubi3trW0s7KxsK+urayrqqmop6alpKOioaCfnp2cm5qZmJeWlZSTkpGQj46NjIuKiYiHhoWEg4KBgH9+fXx7enl4d3Z1dHNycXBvbm1sa2ppaGdmZWRjYmFgX15dXFtaWVhXVlVUU1JRUE9OTUxLSklIR0ZFRENCQUA/Pj08Ozo5ODc2NTQzMjEwLy4tLCsqKSgnJiUkIyIhIB8eHRwbGhkYFxYVFBMSERAPDg0MCwoJCAcGBQQDAgEAACH5BAEAAAEALAAAAAABAAMAAAICRFIAOw==) repeat-y center top;
+	font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+	line-height: 1.5em;
+	overflow: hidden;
+	color: #666;
+	font-size: 16px;
+	border-top: solid 20px #3071b0;
+  border-top-color: #69a5e0;
+	border-bottom: solid 10px #3d3d3d;
+  border-bottom-color: #3f6386;
+	-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.3);
+	-moz-box-shadow: 0px 0px 5px rgba(0,0,0,.3);
+	box-shadow: 0px 0px 5px rgba(0,0,0,.3);
+	clear: both;
+	margin: 20px 0px;
+}
+
+.ck_form, .ck_form * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#ck_subscribe_form {
+  clear: both;
+}
+
+/* Element Queries — uses JS */
+
+.ck_form_content, .ck_form_fields {
+	width: 50%;
+	float: left;
+	padding: 5%;
+}
+
+.ck_form.ck_horizontal {
+}
+
+.ck_form_content {
+	border-bottom: none;
+}
+
+.ck_form.ck_vertical {
+	background: #fff;
+}
+
+.ck_vertical .ck_form_content, .ck_vertical .ck_form_fields {
+	padding: 10%;
+	width: 100%;
+	float: none;
+}
+
+.ck_vertical .ck_form_content {
+	border-bottom: 1px dotted #aaa;
+	overflow: hidden;
+}
+
+/* Trigger the vertical layout with media queries as well */
+
+@media all and (max-width: 499px) {
+
+	.ck_form {
+		background: #fff;
+	}
+
+	.ck_form_content, .ck_form_fields {
+		padding: 10%;
+		width: 100%;
+		float: none;
+	}
+
+	.ck_form_content {
+		border-bottom: 1px dotted #aaa;
+	}
+
+}
+
+/* Content */
+
+.ck_form_content h3 {
+	margin: 0px 0px 15px;
+	font-size: 24px;
+	padding: 0px;
+}
+
+
+.ck_form_content p {
+	font-size: 14px;
+}
+
+.ck_image {
+	float: left;
+	margin-right: 5px;
+}
+
+/* Form fields */
+
+.ck_errorArea {
+	display: none;
+}
+
+#ck_success_msg {
+	padding: 10px 10px 0px;
+	border: solid 1px #ddd;
+	background: #eee;
+}
+
+.ck_label {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.ck_form input[type="text"], .ck_form input[type="email"] {
+	font-size: 14px;
+	padding: 10px 8px;
+	width: 100%;
+	border: 1px solid #d6d6d6; /* stroke */
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px; /* border radius */
+	background-color: #f8f7f7; /* layer fill content */
+	margin-bottom: 5px;
+	height: auto;
+}
+
+.ck_form input[type="text"]:focus, .ck_form input[type="email"]:focus {
+	outline: none;
+	border-color: #aaa;
+}
+
+.ck_checkbox {
+  padding: 10px 0px 10px 20px;
+  display: block;
+  clear: both;
+}
+
+.ck_checkbox input.optIn {
+  margin-left: -20px;
+  margin-top: 0;
+}
+.ck_form .ck_opt_in_prompt {
+  margin-left: 4px;
+}
+.ck_form .ck_opt_in_prompt p {
+  display: inline;
+}
+
+.ck_form .ck_subscribe_button {
+    width: 100%;
+    color: #fff;
+    margin: 10px 0px 0px;
+    padding:  10px 0px;
+    font-size: 18px;
+    background: #0d6db8;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px; /* border radius */
+    cursor: pointer;
+    border: none;
+    text-shadow: none;
+  }
+
+
+.ck_form .ck_guarantee {
+	color: #626262;
+	font-size: 12px;
+	text-align: center;
+	padding: 5px 0px;
+	display: block;
+}
+
+.ck_form .ck_powered_by {
+	display: block;
+	color: #aaa;
+}
+
+.ck_form .ck_powered_by:hover {
+	display: block;
+	color: #444;
+}
+
+.ck_converted_content {
+  display: none;
+	padding: 5%;
+	background: #fff;
+}
+
+
+
+
+
+</style>
+</div><script async="" src="./Create React App with an Express Backend_files/216447" id="_ck_216447"></script>
+	
+
+        
+          <div id="disqus_thread"><iframe id="dsq-app8176" name="dsq-app8176" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Create React App with an Express Backend_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 11236px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe><iframe id="indicator-north" name="indicator-north" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" style="width: 670px !important; border: none !important; overflow: hidden !important; top: 0px !important; min-width: 670px !important; max-width: 670px !important; position: fixed !important; z-index: 2147483646 !important; height: 18px !important; min-height: 18px !important; max-height: 18px !important; display: none !important;" src="./Create React App with an Express Backend_files/saved_resource(1).html"></iframe><iframe id="indicator-south" name="indicator-south" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" style="width: 670px !important; border: none !important; overflow: hidden !important; bottom: 0px !important; min-width: 670px !important; max-width: 670px !important; position: fixed; z-index: 2147483646 !important; height: 18px !important; min-height: 18px !important; max-height: 18px !important; display: none;" src="./Create React App with an Express Backend_files/saved_resource(2).html"></iframe></div><!-- /#disqus_thread -->
+          
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'daveceddia'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the &lt;a href="http://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="https://daveceddia.com/snapshot-testing-react-with-jest/" class="btn" title="Snapshot Testing React with Jest">Previous</a>
+      
+      
+        <a href="https://daveceddia.com/convert-createclass-to-function-component/" class="btn" title="Convert React.createClass to Stateless Function Components">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper muted-centered">
+  <footer role="contentinfo">
+    
+
+<span>© 2017 Dave Ceddia.</span>
+<div class="social-icons">
+	<a href="http://twitter.com/dceddia" title="Dave Ceddia on Twitter" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+	
+	<a href="http://plus.google.com/+dceddia" title="Dave Ceddia on Google+" target="_blank"><i class="fa fa-google-plus-square fa-2x"></i></a>
+	
+	
+	
+	
+	<a href="http://github.com/dceddia" title="Dave Ceddia on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+	
+  
+	
+  <a href="https://daveceddia.com/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'https://daveceddia.com';
+</script>
+
+<script src="./Create React App with an Express Backend_files/jquery.min(1).js"></script>
+<script src="./Create React App with an Express Backend_files/scripts.min.js"></script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-82635227-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid');
+  ga('send', 'pageview');
+
+</script>
+
+
+<!-- Asynchronous Clicky tracking code-->
+<script type="text/javascript">
+var clicky_site_ids = clicky_site_ids || [];
+clicky_site_ids.push(100838734);
+(function() {
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = '//static.getclicky.com/js';
+  ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+})();
+</script>
+<noscript>&lt;p&gt;&lt;img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100838734ns.gif" /&gt;&lt;/p&gt;</noscript>
+
+
+<script>
+$(function() {
+  $('.click-to-show').click(function(e) {
+    $(e.target).parent('.click-to-show').find('.highlight').toggle();
+  });
+});
+
+function signupClicked() {
+  // if(window.clicky){ window.clicky.goal('Newsletter Signup'); }
+}
+function inlineSignupClicked() {
+  // if(window.clicky){ window.clicky.goal('[Inline] Newsletter Signup'); }
+}
+function testingInlineClicked() {
+  // if(window.clicky){ window.clicky.goal('[Inline, Testing] Newsletter Signup'); }
+}
+</script>
+
+<script src="./Create React App with an Express Backend_files/saved_resource" data-sumo-site-id="e237fc3d7a2f1c8c986e03b6b4e1f5c1689d5e40133932e1f546a3748d5d6747" async="async"></script>
+
+
+
+<iframe style="display: none;" src="./Create React App with an Express Backend_files/saved_resource(3).html"></iframe><iframe id="sumome-jquery-iframe" title="Sumo Hidden Content" style="display: none;" src="./Create React App with an Express Backend_files/saved_resource(4).html"></iframe><a href="javascript:void(0);" title="Sumo" style="background-color: rgb(0, 115, 183); border-radius: 3px 0px 0px 3px; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 10px; position: fixed; z-index: 2147483647; padding: 0px; width: 44px; height: 40px; text-indent: -10000px; opacity: 1; display: none !important;"><span style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">Sumo</span><span style="display:block;width:40px;height:40px;background:white;margin-left:4px;-webkit-border-radius: 3px 0 0 3px;-moz-border-radius: 3px 0 0 3px;-ms-border-radius: 3px 0 0 3px;-o-border-radius: 3px 0 0 3px;border-radius: 3px 0 0 3px;background-repeat:no-repeat;background-position:8px 8px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxZDQ2MjI4YS03NWY2LTRkZTQtOGJjYy1hODc1NjRkMjYxYTUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDQ3MUVFMDFFMjVDMTFFNjlFQjhBRjdGODU5MDJBMDUiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDQ3MUVFMDBFMjVDMTFFNjlFQjhBRjdGODU5MDJBMDUiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxZDQ2MjI4YS03NWY2LTRkZTQtOGJjYy1hODc1NjRkMjYxYTUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MWQ0NjIyOGEtNzVmNi00ZGU0LThiY2MtYTg3NTY0ZDI2MWE1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+8JtvywAAAKhQTFRFzOPxSJvLA3W4Mo7FBna5w97u8vj7EHy8a67VhbzdsdTpVaLPh73d9/v9C3m6QZfJbq/WXKbR3u32JIfB3ez1KorDir/eBHW4+/3+rtPoZarUG4K/LIvDDnu7ocvkf7nbdrTY9fr8E328WKPQO5PITJ3MPpXJstXptdbq+Pv9cbHXaq3VU6HOkMLgnMnjDHq62uv1/P3+6/T53Oz1cLDX/f7+AHO3////ptOZ5QAAADh0Uk5T/////////////////////////////////////////////////////////////////////////wA7XBHKAAAAmUlEQVR42sSRRxLCMAxFRSq9907ovebr/jdDMWYGxmZL3sIqbyFbJv4B/VlkVlerKALTD3G46Mx3AOR1UZ/TsDxW6W0gfYRNVfTCFu2AWpAMgMItMW+zQJU2UjWI29D0+e5KWNPMk+A9Om+B/UgOJyCuwMJCrpuziYkIsglfRByZ/XM3eXnBFEu1kpMpjq9dxQYp/OAXTwEGAB7Rc1xVnPemAAAAAElFTkSuQmCC);"></span></a><iframe style="display: none;" src="./Create React App with an Express Backend_files/saved_resource(5).html"></iframe><div style="position:fixed;top:0;left:0;overflow:hidden;"><label for="focus_retriever" style="position:absolute;left:-1000px;">Focus Retriever</label><input style="position:absolute;left:-1000px;" type="text" name="focus_retriever" value="" id="focus_retriever" readonly="true"></div><div class="sumome-stylebufferbottom-shim" style="height: 0px;"></div><div class="sumome-share-client-wrapper sumome-share-client-wrapper-left-page sumome-share-client-counts sumome-share-client-light sumome-share-client-medium" style="top: 204.5px;"><div class="sumome-share-client-show"><span></span></div><div data-sumome-share-pos="lp" class="sumome-share-client sumome-share-client-left-page sumome-share-client-counts sumome-share-client-light sumome-share-client-medium"><div class="sumome-share-client-animated sumome-share-client-share sumome-share-client-share-share sumome-share-client-count" data-sumome-share="share" style="background: rgb(255, 255, 255); color: black;"><span style="bottom: auto; top: 11px;"><strong>282</strong><br>Shares</span></div><a title="Facebook" class="sumome-share-client-animated sumome-share-client-share sumome-share-client-count" data-sumome-share="facebook" href="javascript:void(0);" style="background: rgb(59, 89, 152); color: rgb(255, 255, 255);"><img src="./Create React App with an Express Backend_files/facebook-white-60.png" alt="Facebook"><span>111</span></a><a title="Reddit" class="sumome-share-client-animated sumome-share-client-share sumome-share-client-count" data-sumome-share="reddit" href="javascript:void(0);" style="background: rgb(255, 87, 0); color: rgb(255, 255, 255);"><img src="./Create React App with an Express Backend_files/reddit-white-60.png" alt="Reddit"><span>62</span></a><a title="Google+" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="googleplus" href="javascript:void(0);" style="background: rgb(221, 75, 57); color: rgb(255, 255, 255);"><img src="./Create React App with an Express Backend_files/googleplus-white-60.png" alt="Google+"></a><a title="Twitter" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="twitter" href="javascript:void(0);" style="background: rgb(0, 172, 237); color: rgb(255, 255, 255);"><img src="./Create React App with an Express Backend_files/twitter-white-60.png" alt="Twitter"></a><a title="YC Hacker News" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="ychackernews" href="javascript:void(0);" style="background: rgb(252, 102, 32); color: rgb(255, 255, 255);"><img src="./Create React App with an Express Backend_files/ychackernews-white-60.png" alt="YC Hacker News"></a><a title="SumoMe" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="sumome" href="javascript:void(0);" style="background: rgb(15, 82, 186); color: rgb(255, 255, 255);"><img src="./Create React App with an Express Backend_files/sumome-white-60.png" alt="SumoMe"></a></div><div class="sumome-share-client-hide"><span></span></div></div></body></html>
